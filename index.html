@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Una breve presentación personal.">
+  <title>Hola, soy Lucian | Mi página personal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+      place-items: center;
+      background: #f3f6fb;
+      color: #1f2937;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      width: min(100%, 600px);
+      padding: 48px 40px;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 12px 32px rgb(31 41 55 / 10%);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      color: #4f46e5;
+      font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    p {
+      margin: 0 0 28px;
+      color: #4b5563;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: 0;
+      border-radius: 8px;
+      background: #4f46e5;
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      background: #4338ca;
+    }
+
+    button:focus-visible {
+      outline: 3px solid #a5b4fc;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 36px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>¡Hola! Soy Lucian</h1>
+    <p>
+      Estoy aprendiendo desarrollo web y me encanta crear cosas nuevas.
+      En esta página comparto un poco sobre mí y mi camino en la tecnología.
+    </p>
+    <button id="greet-button" type="button">¡Encantado de conocerte!</button>
+    <p id="greeting" role="status" hidden></p>
+  </main>
+  <script>
+    const greetButton = document.querySelector("#greet-button");
+    const greeting = document.querySelector("#greeting");
+
+    greetButton.addEventListener("click", () => {
+      greeting.textContent = "¡Hola, Lucian! ¡Encantado de saludarte!";
+      greeting.hidden = false;
+    });
+  </script>
+</body>
+</html>
